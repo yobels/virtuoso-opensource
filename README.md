@@ -90,7 +90,7 @@ build problems.
 To check the version number of the tools installed on your system,
 use one of the following commands:
 
-    $ autoconf --version
+ ```   $ autoconf --version
     $ automake --version
     $ libtoolize --version
     $ flex --version
@@ -99,21 +99,21 @@ use one of the following commands:
     $ gawk --version
     $ m4 --version
     $ make --version
-    $ openssl version
+    $ openssl version```
 
 If you have an older version than automake version 1.9 you can edit
-the configure.ac script around line 47 using the examples provided for
+the `configure.ac` script around line 47 using the examples provided for
 each version.
 
 Note that uptodate operating systems (particularly all Linux distibutions)
 split some of these packages into runtime and development
 packages, so users of these platforms may need to run e.g.:
 
-    apt-get install libssl-dev
+    `apt-get install libssl-dev`
 
 or
 
-    yum install openssl-devel 
+    `yum install openssl-devel `
 
 to get development headers & libraries for OpenSSL.
 
@@ -125,13 +125,9 @@ The build produces a demo database and Virtuoso application packages
 that are quite large. At least 800 MB of free space should be available
 in the build file system.
 
-When running `make install', the target file system should have about 460
-MB free. By default, the install target directories are under /usr/local/,
-but you can specify
-
-    ./configure --prefix=/path/to/dir
-
-instead.
+When running `make install`, the target file system should have about 460
+MB free. By default, the install target directories are under `/usr/local/`,
+but you can specify `./configure --prefix=/path/to/dir` instead.
 
 The minimum working configuration consists of the server executable
 and config files plus database, no more than a few MB for the server
@@ -143,9 +139,9 @@ Make FAQ
 
 In the root directory of the checkout perform the following commands:
 
-    ./autogen.sh        # should only be needed in git clone
+    ```./autogen.sh        //should only be needed in git clone
     ./configure
-    make
+    make```
 
 to produce the default binaries, VAD packages and demo database. This
 takes some time, principally due to building and filling the demo
@@ -171,227 +167,227 @@ us at <vos.admin@openlinksw.com>.
 
 Generic build environment
 -------------------------
-    CC=cc
+    ```CC=cc
     CFLAGS="-O"
     export CFLAGS CC
     ./configure
     make
-    make install
+    make install```
 
 AIX 4.x 32-bit
 --------------
-    CC=cc_r7
+    ```CC=cc_r7
     CFLAGS="-O -q32"
     LDFLAGS="-brtl"
     OBJECT_MODE=32
     export CC CFLAGS LDFLAGS OBJECT_MODE
-    ./configure ...
+    ./configure ...```
 
 AIX 4.x 64-bit
 --------------
-    CC=cc_r7
+    ```CC=cc_r7
     CFLAGS="-O -q64"
     LDFLAGS="-brtl"
     OBJECT_MODE=64
     export CC CFLAGS LDFLAGS OBJECT_MODE
-    ./configure ...
+    ./configure ...```
 
 AIX 5.x 32-bit
 --------------
-    CC=cc_r
+    ```CC=cc_r
     CFLAGS="-O -q32"
     LDFLAGS="-brtl"
     OBJECT_MODE=32
     export CC CFLAGS LDFLAGS OBJECT_MODE
-    ./configure ...
+    ./configure ...```
 
 AIX 5.x 32-bit
 --------------
-    CC=cc_r
+    ```CC=cc_r
     CFLAGS="-O -q64"
     LDFLAGS="-brtl"
     OBJECT_MODE=64
     export CC CFLAGS LDFLAGS OBJECT_MODE
-    ./configure ...
+    ./configure ...```
 
 Digital Unix/OSF1 V5.0 64-bit
 -----------------------------
-    CFLAGS="-O"
+    ```CFLAGS="-O"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 HP/UX 11.00 32-bit
 ------------------
-    CFLAGS="-O -Ae +DA1.1"
+    ```CFLAGS="-O -Ae +DA1.1"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 HP/UX 11.00 64-bit
 ------------------
-    CFLAGS="-O -Ae +DA2.0W"
+    ```CFLAGS="-O -Ae +DA2.0W"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 HP/UX 11.23 Itanium 32-bit
 --------------------------
-    CFLAGS="-O -Ae +DD32"
+    ```CFLAGS="-O -Ae +DD32"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 HP/UX 11.23 Itanium 64-bit
 --------------------------
-    CFLAGS="-O -Ae +DD64"
+    ```CFLAGS="-O -Ae +DD64"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Linux 32-bit
 ------------
-    CFLAGS="-O2"
+    ```CFLAGS="-O2"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Linux 64-bit
 ------------
-    CFLAGS="-O2 -m64"
+    ```CFLAGS="-O2 -m64"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.2 and 10.3 PPC 32-bit
 ---------------------------------
-    CFLAGS="-O -m32 -mmacosx-version-min=10.4"
+    ```CFLAGS="-O -m32 -mmacosx-version-min=10.4"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.4 PPC 32-bit
 ------------------------
-    CFLAGS="-O -m32 -mmacosx-version-min=10.4"
+    ```CFLAGS="-O -m32 -mmacosx-version-min=10.4"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.4 PPC 64-bit
 ------------------------
-    CFLAGS="-O -m64 -mmacosx-version-min=10.4"
+    ```CFLAGS="-O -m64 -mmacosx-version-min=10.4"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.4 Universal 32-bit
 ------------------------------
-    CFLAGS="-O -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch ppc -arch i386 -mmacosx-version-min=10.4"
+    ```CFLAGS="-O -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch ppc -arch i386 -mmacosx-version-min=10.4"
     export CFLAGS
-    ./configure --disable-dependency-tracking ...
+    ./configure --disable-dependency-tracking ...```
 
 Mac OS X 10.5 32-bit
 --------------------
-    CFLAGS="-O -m32 -mmacosx-version-min=10.5"
+    ```CFLAGS="-O -m32 -mmacosx-version-min=10.5"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.5 64-bit
 --------------------
-    CFLAGS="-O -m64 -mmacosx-version-min=10.5"
+    ```CFLAGS="-O -m64 -mmacosx-version-min=10.5"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.5 Universal 
 -----------------------
-    CFLAGS="-O -isysroot /Developer/SDKs/MacOSX10.5.sdk -arch ppc -arch i386 -arch ppc64 -arch x86_64 -mmacosx-version-min=10.5"
+    ```CFLAGS="-O -isysroot /Developer/SDKs/MacOSX10.5.sdk -arch ppc -arch i386 -arch ppc64 -arch x86_64 -mmacosx-version-min=10.5"
     export CFLAGS
-    ./configure --disable-dependency-tracking ...
+    ./configure --disable-dependency-tracking ...```
 
 Mac OS X 10.6 32-bit
 --------------------
-    CFLAGS="-O -m32 -mmacosx-version-min=10.6"
+    ```CFLAGS="-O -m32 -mmacosx-version-min=10.6"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.6 64-bit
 --------------------
-    CFLAGS="-O -m64 -mmacosx-version-min=10.6"
+    ```CFLAGS="-O -m64 -mmacosx-version-min=10.6"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.6 Universal 
 -----------------------
-    CFLAGS="-O -isysroot /Developer/SDKs/MacOSX10.6.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.6"
+    ```CFLAGS="-O -isysroot /Developer/SDKs/MacOSX10.6.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.6"
     export CFLAGS
-    ./configure --disable-dependency-tracking ...
+    ./configure --disable-dependency-tracking ...```
 
 Mac OS X 10.7 32-bit
 --------------------
-    CFLAGS="-O -m32 -mmacosx-version-min=10.7"
+    ```CFLAGS="-O -m32 -mmacosx-version-min=10.7"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.7 64-bit
 --------------------
-    CFLAGS="-O -m64 -mmacosx-version-min=10.7"
+    ```CFLAGS="-O -m64 -mmacosx-version-min=10.7"
     export CFLAGS
-    ./configure ...
+    ./configure ...```
 
 Mac OS X 10.7 Universal 
 -----------------------
-    CFLAGS="-O -arch i386 -arch x86_64 -mmacosx-version-min=10.7"
+    ```CFLAGS="-O -arch i386 -arch x86_64 -mmacosx-version-min=10.7"
     export CFLAGS
-    ./configure --disable-dependency-tracking ...
+    ./configure --disable-dependency-tracking ...```
 
 Solaris 2.x i386 32-bit
 -----------------------
 Note: on Solaris or Open Solaris we recommend you use gmake either from
-/usr/ sfw/bin/ or install it from sunfreeware, as long as it's version
+`/usr/ sfw/bin/` or install it from sunfreeware, as long as it's version
 3.80 or better.
 
-    CC=cc
+    ```CC=cc
     CFLAGS="-O"
     PATH=/opt/SUNWspro/bin:/usr/ccs/bin:$PATH
     export CFLAGS CC PATH
-    ./configure ...
+    ./configure ...```
 
 Solaris 2.10 Opteron 32-bit
 ---------------------------
-    CC=cc
+    ```CC=cc
     CFLAGS="-O -xtarget=opteron"
     PATH=/opt/SUNWspro/bin:/usr/ccs/bin:$PATH
     export CFLAGS CC PATH
-    ./configure ...
+    ./configure ...```
 
 Solaris 2.10 Opteron 64-bit
 ---------------------------
-    CC=cc
+    ```CC=cc
     CFLAGS="-O -xtarget=opteron -xarch=amd64"
     PATH=/opt/SUNWspro/bin:/usr/ccs/bin:$PATH
     export CFLAGS CC PATH
-    ./configure ...
+    ./configure ...```
 
 Solaris 2.8 and above SPARC 32-bit
 ----------------------------------
-    CC=cc
+    ```CC=cc
     CFLAGS="-O"
     PATH=/opt/SUNWspro/bin:/usr/ccs/bin:$PATH
     export CFLAGS CC PATH
-    ./configure ...
+    ./configure ...```
 
 Solaris 2.8 and above SPARC 32-bit
 ----------------------------------
-    CC=cc
+    ```CC=cc
     CFLAGS="-O -xtarget=ultra -xarch=v9"
     PATH=/opt/SUNWspro/bin:/usr/ccs/bin:$PATH
     export CFLAGS CC PATH
-    ./configure ...
+    ./configure ...```
 
 Installation
 ============
 
 After running configure && make,
 
-    make install
+    `make install`
 
 at the root of the build tree copies the files to the locations
-specified by the --prefix option to configure. The default of --prefix
-is /usr/local/. You can override this by specifying `make install
-prefix=/home/virtuoso' instead, for example.
+specified by the --prefix option to configure. The default of `--prefix`
+is `/usr/local/`. You can override this by specifying `make install
+prefix=/home/virtuoso` instead, for example.
 
 These subdirectories are all appended to the specified prefix,
-i.e. /usr/local/ by default:
+i.e. `/usr/local/` by default:
 
  * share/virtuoso/doc/html
  * share/virtuoso/doc/pdf
@@ -406,7 +402,7 @@ i.e. /usr/local/ by default:
  * lib/virtuoso - hosting sample.a hosting_sample.la hosting_sample.so
     plugin_sample.a plugin_sample.so
 
-Note: as of version 5.0.2, the ./configure script supports different
+Note: as of version 5.0.2, the `./configure` script supports different
 subdirectory structures with the --with-layout= parameter. If you've
 specified something other than the default, the above may differ
 accordingly.
@@ -419,7 +415,7 @@ Test Suite
 
 Optionally, you can run
 
-    make check
+    `make check`
 
 at the root of the build tree to start the automated test suite. This
 takes about an hour on a 2GHz machine and requires approximately 1 GB
@@ -431,15 +427,15 @@ Getting Started
 
 Run
 
-    cd var/lib/virtuoso/db 
-    virtuoso-t -f &
+    ```cd var/lib/virtuoso/db 
+    virtuoso-t -f &```
 
 to start the server in the background. It will not detach from the shell,
 so you see the startup messages.
 
 By default, when no -c parameter is specified, virtuoso will use the
 virtuoso.ini file in this directory, which is generated as part of
-`make install'.
+`make install`.
 
 The first time it's run, it will create the empty database (no special
 commands required) and install the Conductor VAD package. From here, you
@@ -448,25 +444,25 @@ use the System Administration / Packages page to install other packages
 such as Demo and the ODS suite (addressbook, weblog, feeds manager and
 other applications) etc. 
 
-The default login is `dba' with a password of `dba' for the Conductor and
-isql (for DAV functions, the default login is `dav' with a password of
-`dav').
+The default login is `dba` with a password of `dba` for the Conductor and
+isql (for DAV functions, the default login is `dav` with a password of
+`dav`).
 
 You will see a checkpoint in the terminal for each package selected:
 
-    15:33:54 INFO: Checkpoint made, log reused
+    `15:33:54 INFO: Checkpoint made, log reused`
 
 To connect with the command line SQL tool,
 
-    isql 1112 dba dba
+    `isql 1112 dba dba`
 
-gives a SQL> prompt.
+gives a `SQL> prompt.`
 
 If you've installed the demo VAD above, type
-    SQL> use Demo;
+    `SQL> use Demo;`
 
 to switch to the demo database, containing the Microsoft Northwind sample
-tables. The `help' command in isql gives further instructions.
+tables. The `help` command in isql gives further instructions.
 
 
 To use the web admin interface, point the browser to: 
@@ -489,12 +485,12 @@ VAD Packages
 The different VAD packages can be installed via ISQL using the following
 command (if the installation packages reside in the filesystem):
 
-    SQL> vad_install ('file/system/path/package-name.vad', 0);
+    `SQL> vad_install ('file/system/path/package-name.vad', 0);`
 
 Alternatively, you can copy VAD packages to Virtuoso's DAV repository
 and then execute the following command (also from ISQL):
 
-    SQL> vad_install ('webdav/path>/package-name.vad', 1);
+    `SQL> vad_install ('webdav/path>/package-name.vad', 1);`
 
 at the isql command line. Note that the DirsAllowed parameter of the
 Parameters section of the ini-file must allow access to the directory
